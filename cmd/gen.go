@@ -72,7 +72,8 @@ func gen() {
 
 	file, _ := marshalXML(data)
 
-	err = ioutil.WriteFile(HomeDir+utils.Output, file, 0644)
+	output := HomeDir + "/" + utils.Output
+	err = ioutil.WriteFile(output, file, 0644)
 	if err != nil {
 		panic(err)
 	}
