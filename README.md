@@ -11,6 +11,9 @@ go install github.com/thinhda96/gen-form-template@latest
 - Generate settings
 
 ```bash
-gen-form-template init
+gen-form-template gen -o .
 ```
 
+- Import setting
+
+    1. 

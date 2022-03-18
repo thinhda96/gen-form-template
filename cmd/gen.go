@@ -16,6 +16,7 @@ import (
 )
 
 var inputFolder string
+var outputFolder string
 
 var genCmd = &cobra.Command{
 	Use:   "gen",
@@ -33,6 +34,7 @@ var genCmd = &cobra.Command{
 func init() {
 	rootCmd.AddCommand(genCmd)
 	genCmd.Flags().StringVar(&inputFolder, "i", "etc/production", "input folder")
+	genCmd.Flags().StringVar(&outputFolder, "o", ".", "output settings.zip folder")
 }
 
 func prepare() {
@@ -44,9 +46,13 @@ func prepare() {
 		utils.NoError(err)
 
 		clone := exec.Command("git", "clone", "git@github.com:thinhda96/gen-form-template.git", HomeDir)
-		v, err := clone.Output()
+		err = clone.Run()
 		utils.NoError(err)
-		log.Println(string(v))
+
+		update := exec.Command("git", "pull")
+		update.Dir = HomeDir
+		err = update.Run()
+		utils.NoError(err)
 	}
 }
 
@@ -81,7 +87,7 @@ func gen() {
 		panic(err)
 	}
 
-	cmd := exec.Command(HomeDir + "/bin/run.sh")
+	cmd := exec.Command(HomeDir+"/bin/run.sh", outputFolder)
 	v, err := cmd.Output()
 	log.Println(string(v))
 
