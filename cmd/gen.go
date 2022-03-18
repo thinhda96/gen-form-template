@@ -36,14 +36,17 @@ func init() {
 }
 
 func prepare() {
+	os.Remove(HomeDir)
+
 	if _, err := os.Stat(HomeDir); os.IsNotExist(err) {
 		cmd := exec.Command("mkdir", "-p", HomeDir)
 		err := cmd.Run()
 		utils.NoError(err)
 
 		clone := exec.Command("git", "clone", "git@github.com:thinhda96/gen-form-template.git", HomeDir)
-		err = clone.Run()
+		v, err := clone.Output()
 		utils.NoError(err)
+		log.Println(string(v))
 	}
 }
 
@@ -79,14 +82,11 @@ func gen() {
 	}
 
 	cmd := exec.Command(HomeDir + "/bin/run.sh")
-
 	v, err := cmd.Output()
-
-	if err != nil {
-		panic(err)
-	}
-
 	log.Println(string(v))
+
+	utils.NoError(err)
+
 }
 
 func marshalXML(s utils.TemplateSetting) ([]byte, error) {
