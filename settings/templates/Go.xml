@@ -1,0 +1,61 @@
+<templateSet group="Go">
+  <template name=".ctrl" value="ctrl := gomock.NewController(t)&#10;t.Cleanup(func() { ctrl.Finish() })" description="new mock ctrl" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="GO" value="true" />
+    </context>
+  </template>
+  <template name=".gen" value="//go:generate mockgen -source $FILE$.go -destination ../test/mock/$FILE$.go -package mock" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="FILE" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="GO" value="true" />
+    </context>
+  </template>
+  <template name=".nroot" value="name: &quot;$NAME$&quot;&#10;title: &quot;$TITLE$&quot;&#10;evaluation: &quot;$EVAL$&quot;&#10;nodes: []&#10;fallback:" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="TITLE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="EVAL" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="ANY_OPENAPI_JSON_FILE" value="false" />
+      <option name="ANY_OPENAPI_YAML_FILE" value="false" />
+      <option name="CSS" value="false" />
+      <option name="ECMAScript6" value="false" />
+      <option name="GENERAL_JSON_FILE" value="false" />
+      <option name="GENERAL_YAML_FILE" value="false" />
+      <option name="GO" value="false" />
+      <option name="HTML" value="false" />
+      <option name="HTTP_CLIENT_ENVIRONMENT" value="false" />
+      <option name="JAVA_SCRIPT" value="false" />
+      <option name="JSON" value="false" />
+      <option name="OTHER" value="true" />
+      <option name="REQUEST" value="false" />
+      <option name="SHELL_SCRIPT" value="false" />
+      <option name="SQL" value="false" />
+      <option name="TypeScript" value="false" />
+      <option name="XML" value="false" />
+    </context>
+  </template>
+  <template name=".nsub" value="name: &quot;$NAME$&quot;&#10;title: &quot;$TIT$&quot;&#10;evaluation: &quot;$EVAL$&quot;&#10;scoring: &quot;0&quot;&#10;output:&#10;  level: L1" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="TIT" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="EVAL" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="ANY_OPENAPI_JSON_FILE" value="false" />
+      <option name="ANY_OPENAPI_YAML_FILE" value="false" />
+      <option name="CSS" value="false" />
+      <option name="ECMAScript6" value="false" />
+      <option name="GENERAL_JSON_FILE" value="false" />
+      <option name="GENERAL_YAML_FILE" value="false" />
+      <option name="GO" value="false" />
+      <option name="HTML" value="false" />
+      <option name="HTTP_CLIENT_ENVIRONMENT" value="false" />
+      <option name="JAVA_SCRIPT" value="false" />
+      <option name="JSON" value="false" />
+      <option name="OTHER" value="true" />
+      <option name="REQUEST" value="false" />
+      <option name="SHELL_SCRIPT" value="false" />
+      <option name="SQL" value="false" />
+      <option name="TypeScript" value="false" />
+      <option name="XML" value="false" />
+    </context>
+  </template>
+</templateSet>

@@ -1,0 +1,10 @@
+LivePlugin
+PlantUML integration
+String Manipulation
+cn.jxzhang.plugin.json-formatter
+idea.plugin.protoeditor
+net.ashald.envfile
+org.mayevskiy.intellij.sonar
+ru.adelf.idea.dotenv
+some.awesome
+zielu.gittoolbox
