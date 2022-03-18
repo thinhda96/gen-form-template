@@ -38,7 +38,8 @@ func init() {
 }
 
 func prepare() {
-	os.Remove(HomeDir)
+	err := os.RemoveAll(HomeDir)
+	utils.NoError(err)
 
 	if _, err := os.Stat(HomeDir); os.IsNotExist(err) {
 		cmd := exec.Command("mkdir", "-p", HomeDir)
@@ -47,11 +48,6 @@ func prepare() {
 
 		clone := exec.Command("git", "clone", "git@github.com:thinhda96/gen-form-template.git", HomeDir)
 		err = clone.Run()
-		utils.NoError(err)
-
-		update := exec.Command("git", "pull")
-		update.Dir = HomeDir
-		err = update.Run()
 		utils.NoError(err)
 	}
 }
