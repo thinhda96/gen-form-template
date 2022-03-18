@@ -6,10 +6,6 @@ func GetTemplateContext() TemplateContext {
 	return TemplateContext{
 		Option: []TemplateOption{
 			{
-				Name:  "OTHER",
-				Value: "true",
-			},
-			{
 				Name:  "ANY_OPENAPI_JSON_FILE",
 				Value: "false",
 			},
@@ -55,15 +51,7 @@ func GetTemplateContext() TemplateContext {
 			},
 			{
 				Name:  "OTHER",
-				Value: "false",
-			},
-			{
-				Name:  "PROTO",
-				Value: "false",
-			},
-			{
-				Name:  "PROTOTEXT",
-				Value: "false",
+				Value: "true",
 			},
 			{
 				Name:  "REQUEST",

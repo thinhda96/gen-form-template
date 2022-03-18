@@ -25,3 +25,4 @@ gen-form-template gen --o .
     6. Select `Import and Restart`
     7. After IDE is restarted, enjoy your life.
 
+Note: GoLand don't support import settings if sync settings is enabled. `Files` -> `Manage IDE Settings` -> `IDE Settings Sync` -> `Disable Sync...`. After importing live templates, you can enable sync normally.

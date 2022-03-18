@@ -97,7 +97,7 @@ func marshalXML(s utils.TemplateSetting) ([]byte, error) {
 		XMLName struct{} `xml:"templateSet"`
 	}{TemplateSet: s.TemplateSet}
 
-	return xml.MarshalIndent(tmp, "", "   ")
+	return xml.MarshalIndent(tmp, "", "  ")
 }
 
 func buildTemplateByLender(lender string) []utils.Template {
